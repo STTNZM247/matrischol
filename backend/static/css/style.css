@@ -20,8 +20,8 @@ body {
   border-radius: 12px;
   padding: 30px;
   width: 90%;
-  max-width: 400px;
-  margin: 80px auto;
+  max-width: 500px;
+  margin: 0px auto;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 2;
@@ -29,7 +29,7 @@ body {
 }
 
 .cuadro-login h2 {
-  color: #009639;
+  color: #421383;
   margin-bottom: 20px;
   font-size: 1.8rem;
   font-weight: bold;
@@ -48,7 +48,7 @@ body {
 }
 
 .cuadro-login input:focus {
-  border-color: #009639;
+  border-color: #2b00ff;
   box-shadow: 0 0 5px rgba(0, 153, 57, 0.3);
   outline: none;
 }
@@ -67,7 +67,7 @@ body {
 
 .cuadro-login button {
   width: 100%;
-  background-color: #009639;
+  background-color: #0f0096;
   color: white;
   border: none;
   padding: 12px;
@@ -78,7 +78,7 @@ body {
 }
 
 .cuadro-login button:hover {
-  background-color: #00b84a;
+  background-color: #006bb8;
 }
 
 .login-links {
@@ -95,7 +95,7 @@ body {
 }
 
 .navbar {
-  background-color: #f0e7b7;
+  background-color: #0d1f26;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -106,20 +106,20 @@ body {
 .navbar .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .navbar .logo img {
-  height: 70px;
+  height: 40px;
   width: auto;
-  border-radius: 10px;
+  border-radius: 0px;
   object-fit: contain;
 }
 
 .navbar .logo h1 {
   font-weight: bold;
   font-size: 1.8rem;
-  color: #009639;
+  color: #ffffff;
   margin: 0;
 }
 
@@ -131,13 +131,13 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: #009639;
+  color: #ffffff;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .navbar a:hover {
-  color: #00b84a;
+  color: #687bd0;
 }
 
 .hero {
@@ -171,7 +171,7 @@ body {
 }
 
 .hero span {
-  color: #00ff8c;
+  color: #ffffff;
 }
 
 .hero p {
@@ -271,7 +271,7 @@ tr:hover {
 
 
 h1, h2, h3 {
-  color: #009639;
+  color: #421383;
   font-weight: bold;
   text-align: center;
 }
@@ -322,8 +322,8 @@ a:hover {
 
 footer {
   text-align: center;
-  background: #f0e7b7;
-  color: #009639;
+  background: #0d1f26;
+  color: #ffffff;
   padding: 15px;
   font-size: 0.9rem;
   margin-top: auto;

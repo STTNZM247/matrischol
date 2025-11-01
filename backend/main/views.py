@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth.hashers import make_password, check_password
 from main.models import Usuario
+from django.contrib.auth.hashers import make_password, check_password
+from django.core.mail import send_mail
 
 def index(request):
     return render(request, 'main/index.html')
@@ -24,7 +25,6 @@ def registro_view(request):
                 con_usu=hashed_password,
                 id_rol_id=13 
             )
-            messages.success(request, "Registro exitoso. Ahora puedes iniciar sesión.")
             return redirect('login')
 
     return render(request, "main/registro.html")
@@ -39,8 +39,6 @@ def login_view(request):
                 request.session['usuario_id'] = usuario.id_usu
                 request.session['usuario_nombre'] = usuario.nom_usu
                 request.session['rol'] = usuario.id_rol_id
-
-                messages.success(request, f"Bienvenido {usuario.nom_usu}")
 
                 rol = usuario.id_rol.nom_rol.lower()
                 if rol == "administrador":
@@ -64,6 +62,18 @@ def login_view(request):
 
     return render(request, 'main/login.html')
 
+def cambiar_contrasena(request, id_usuario):
+    if request.method == 'POST':
+        nueva_contrasena = request.POST.get('password')
+        try:
+            usuario = Usuario.objects.get(id_usu=id_usuario)
+            usuario.con_usu = make_password(nueva_contrasena)
+            usuario.save()
+            messages.success(request, "Tu contraseña ha sido actualizada correctamente.")
+            return redirect('login')
+        except Usuario.DoesNotExist:
+            messages.error(request, "Usuario no encontrado.")
+    return render(request, 'main/registration/password_reset_confirm.html')
 
 def panel_admin(request):
     return render(request, 'main/admin_panel/panel_admin.html')
@@ -76,3 +86,5 @@ def panel_acudiente(request):
 
 def panel_administrativo(request):
     return render(request, 'main/administrativo_panel/panel_administrativo.html')
+
+
