@@ -98,7 +98,7 @@ class Matricula(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'matricula'
+  -------------     db_table = 'matricula'
 
 
 class Rol(models.Model):
@@ -121,3 +121,5 @@ class Usuario(models.Model):
     class Meta:
         managed = False
         db_table = 'usuario'
+    def __str__(self):
+        return f"{self.nom_usu} {self.ape_usu}"
